@@ -21,8 +21,9 @@ const handleFormFieldChange = (fieldName, e) => {
   setForm({...form, [fieldName]: e.target.value})
 }
 
-const handleSubmit = () => {
-
+const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(form)
 }
 
 
@@ -46,10 +47,10 @@ const handleSubmit = () => {
             handleChange={(e)=> handleFormFieldChange('name', e)}
             />
             <FormField
-              labelName="Your Name*"
+              labelName="Campaign title*"
               placeholder="write a title"
               inputType="text"
-              value={form.name}
+              value={form.title}
               handleChange={(e)=> handleFormFieldChange('title', e)} 
             />
            
@@ -80,7 +81,7 @@ const handleSubmit = () => {
               placeholder="End Date"
               inputType="date"
               value={form.deadeline}
-              handleChange={(e)=> handleFormFieldChange('deadline', e)} 
+              handleChange={(e)=> handleFormFieldChange('deadeline', e)} 
             />
         </div>
 
